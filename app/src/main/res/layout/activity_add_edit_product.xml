@@ -1,9 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.AddEditProductActivity">
+    android:background="@color/darkBrown">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="32dp">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/backBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="12dp"
+                    android:background="@drawable/brown_full_corner_bg"
+                    app:srcCompat="@drawable/back" />
+
+                <TextView
+                    android:id="@+id/titleTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="12dp"
+                    android:text="Thêm sản phẩm"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Image Preview -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/productImg"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/brown_2_full_corner_bg"
+                app:shapeAppearanceOverlay="@style/cornerImage"
+                app:srcCompat="@drawable/ic_launcher_background" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/changeImageBtn"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/brown_2_full_corner_bg"
+                android:text="📷  Thay đổi ảnh (URL)"
+                android:textColor="@color/lightBrown"
+                android:textSize="14sp" />
+
+            <!-- Form -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/brown_2_full_corner_bg"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tên sản phẩm" android:textColor="@color/lightBrown" android:textSize="12sp" android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/titleInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/brown_full_corner_bg"
+                    android:hint="Ví dụ: Cà phê sữa đá"
+                    android:padding="14dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/brown2"
+                    android:textSize="14sp" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Giá (USD)" android:textColor="@color/lightBrown" android:textSize="12sp" android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/priceInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/brown_full_corner_bg"
+                    android:hint="Ví dụ: 4.99"
+                    android:inputType="numberDecimal"
+                    android:padding="14dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/brown2"
+                    android:textSize="14sp" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Danh mục (Category ID)" android:textColor="@color/lightBrown" android:textSize="12sp" android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/categoryInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/brown_full_corner_bg"
+                    android:hint="Ví dụ: 0, 1, 2..."
+                    android:inputType="number"
+                    android:padding="14dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/brown2"
+                    android:textSize="14sp" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Đánh giá (1-5)" android:textColor="@color/lightBrown" android:textSize="12sp" android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/ratingInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/brown_full_corner_bg"
+                    android:hint="Ví dụ: 4.5"
+                    android:inputType="numberDecimal"
+                    android:padding="14dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/brown2"
+                    android:textSize="14sp" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="URL Ảnh" android:textColor="@color/lightBrown" android:textSize="12sp" android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/imageUrlInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/brown_full_corner_bg"
+                    android:hint="https://..."
+                    android:inputType="textUri"
+                    android:padding="14dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/brown2"
+                    android:textSize="14sp" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Mô tả" android:textColor="@color/lightBrown" android:textSize="12sp" android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/descriptionInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/brown_full_corner_bg"
+                    android:hint="Mô tả sản phẩm..."
+                    android:gravity="top|start"
+                    android:padding="14dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/brown2"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/errorTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="#FF6B6B"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/saveBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/brown_full_corner_bg"
+                    android:text="Lưu sản phẩm"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/deleteBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/brown_2_full_corner_bg"
+                    android:text="Xóa sản phẩm"
+                    android:textColor="#FF6B6B"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

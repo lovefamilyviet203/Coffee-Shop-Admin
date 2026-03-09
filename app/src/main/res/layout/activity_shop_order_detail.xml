@@ -1,9 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.ShopOrderDetailActivity">
+    android:background="@color/darkBrown">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="32dp">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/backBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="12dp"
+                    android:background="@drawable/brown_full_corner_bg"
+                    app:srcCompat="@drawable/back" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="12dp"
+                    android:text="Chi tiết đơn hàng"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Order Info Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/brown_2_full_corner_bg"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="THÔNG TIN ĐƠN HÀNG" android:textColor="@color/lightBrown" android:textSize="12sp" android:textStyle="bold" />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Mã đơn:" android:textColor="@color/lightBrown" android:textSize="13sp" />
+                    <TextView android:id="@+id/orderIdTxt" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="#000000" android:textColor="@color/white" android:textSize="13sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Khách hàng:" android:textColor="@color/lightBrown" android:textSize="13sp" />
+                    <TextView android:id="@+id/customerNameTxt" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="---" android:textColor="@color/white" android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Email:" android:textColor="@color/lightBrown" android:textSize="13sp" />
+                    <TextView android:id="@+id/customerEmailTxt" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="---" android:textColor="@color/white" android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Địa chỉ:" android:textColor="@color/lightBrown" android:textSize="13sp" />
+                    <TextView android:id="@+id/addressTxt" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="---" android:textColor="@color/white" android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Thanh toán:" android:textColor="@color/lightBrown" android:textSize="13sp" />
+                    <TextView android:id="@+id/paymentTxt" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="---" android:textColor="@color/white" android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Thời gian:" android:textColor="@color/lightBrown" android:textSize="13sp" />
+                    <TextView android:id="@+id/dateTimeTxt" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="---" android:textColor="@color/white" android:textSize="13sp" />
+                </LinearLayout>
+
+                <!-- Status Badge -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Trạng thái:" android:textColor="@color/lightBrown" android:textSize="13sp" />
+                    <TextView android:id="@+id/statusTxt" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Pending" android:textColor="@color/orange" android:textSize="13sp" android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Order Items -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Sản phẩm đặt"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/orderItemsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false" />
+
+            <!-- Total Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/brown_2_full_corner_bg"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Tạm tính:" android:textColor="@color/lightBrown" android:textSize="13sp" />
+                    <TextView android:id="@+id/subtotalTxt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$0.00" android:textColor="@color/white" android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Phí giao hàng:" android:textColor="@color/lightBrown" android:textSize="13sp" />
+                    <TextView android:id="@+id/deliveryFeeTxt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$0.00" android:textColor="@color/white" android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Thuế:" android:textColor="@color/lightBrown" android:textSize="13sp" />
+                    <TextView android:id="@+id/taxTxt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$0.00" android:textColor="@color/white" android:textSize="13sp" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginVertical="12dp" android:background="@color/brown2" />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="TỔNG CỘNG:" android:textColor="@color/white" android:textSize="15sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/grandTotalTxt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$0.00" android:textColor="@color/orange" android:textSize="18sp" android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Status Update -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/brown_2_full_corner_bg"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CẬP NHẬT TRẠNG THÁI" android:textColor="@color/lightBrown" android:textSize="12sp" android:textStyle="bold" />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/pendingBtn"
+                        android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:layout_marginEnd="4dp"
+                        android:background="@drawable/brown_full_corner_bg"
+                        android:text="Chờ" android:textColor="@color/white" android:textSize="11sp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/processingBtn"
+                        android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:layout_marginHorizontal="4dp"
+                        android:background="@drawable/brown_full_corner_bg"
+                        android:text="Xử lý" android:textColor="@color/white" android:textSize="11sp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/shippingBtn"
+                        android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:layout_marginHorizontal="4dp"
+                        android:background="@drawable/brown_full_corner_bg"
+                        android:text="Giao" android:textColor="@color/white" android:textSize="11sp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/deliveredBtn"
+                        android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:layout_marginStart="4dp"
+                        android:background="@drawable/brown_full_corner_bg"
+                        android:text="Xong" android:textColor="@color/white" android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
